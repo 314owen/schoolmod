@@ -1,0 +1,127 @@
+{
+    "__comment": "Model generated using MrCrayfish's Model Creator (https://mrcrayfish.com/tools?id=mc)",
+    "textures": {
+        "chair_back": "schoolmod:item/chair_back",
+        "chair_legs": "schoolmod:item/chair_legs",
+        "particle": "schoolmod:item/chair_back"
+    },
+    "display": {
+        "gui": {
+            "rotation": [ 30, 45, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 0.625, 0.625, 0.625 ]
+        },
+        "ground": {
+            "rotation": [ 0, 0, 0 ],
+            "translation": [ 0, 3, 0 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        "fixed": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "head": {
+            "rotation": [ 0, 180, 0 ],
+            "translation": [ 0, 0, 0 ],
+            "scale": [ 1, 1, 1 ]
+        },
+        "firstperson_righthand": {
+            "rotation": [ 0, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        },
+        "thirdperson_righthand": {
+            "rotation": [ 75, 315, 0 ],
+            "translation": [ 0, 2.5, 0 ],
+            "scale": [ 0.375, 0.375, 0.375 ]
+        }
+    },
+    "elements": [
+        {
+            "name": "Cube",
+            "from": [ 1, 0, 1 ], 
+            "to": [ 2, 8, 2 ], 
+            "faces": {
+                "north": { "texture": "#chair_legs", "uv": [ 2, 2, 3, 10 ] },
+                "east": { "texture": "#chair_legs", "uv": [ 12, 1, 13, 9 ] },
+                "south": { "texture": "#chair_legs", "uv": [ 2, 6, 3, 14 ] },
+                "west": { "texture": "#chair_legs", "uv": [ 6, 2, 7, 10 ] },
+                "down": { "texture": "#chair_legs", "uv": [ 12, 3, 13, 4 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 14, 0, 1 ], 
+            "to": [ 15, 8, 2 ], 
+            "faces": {
+                "north": { "texture": "#chair_legs", "uv": [ 8, 2, 9, 10 ] },
+                "east": { "texture": "#chair_legs", "uv": [ 14, 8, 15, 16 ] },
+                "south": { "texture": "#chair_legs", "uv": [ 12, 1, 13, 9 ] },
+                "west": { "texture": "#chair_legs", "uv": [ 3, 6, 4, 14 ] },
+                "down": { "texture": "#chair_legs", "uv": [ 14, 10, 16, 10 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 14, 0, 14 ], 
+            "to": [ 15, 8, 15 ], 
+            "faces": {
+                "north": { "texture": "#chair_legs", "uv": [ 11, 7, 12, 15 ] },
+                "east": { "texture": "#chair_legs", "uv": [ 11, 1, 12, 9 ] },
+                "south": { "texture": "#chair_legs", "uv": [ 6, 4, 7, 12 ] },
+                "west": { "texture": "#chair_legs", "uv": [ 13, 2, 14, 10 ] },
+                "down": { "texture": "#chair_legs", "uv": [ 12, 14, 13, 15 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 1, 0, 14 ], 
+            "to": [ 2, 8, 15 ], 
+            "faces": {
+                "north": { "texture": "#chair_legs", "uv": [ 3, 2, 4, 10 ] },
+                "east": { "texture": "#chair_legs", "uv": [ 13, 6, 14, 14 ] },
+                "south": { "texture": "#chair_legs", "uv": [ 11, 6, 12, 14 ] },
+                "west": { "texture": "#chair_legs", "uv": [ 7, 2, 8, 10 ] },
+                "down": { "texture": "#chair_legs", "uv": [ 2, 2, 3, 3 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 1, 8, 1 ], 
+            "to": [ 15, 9, 16 ], 
+            "faces": {
+                "north": { "texture": "#chair_back", "uv": [ 0, 0, 14, 1 ] },
+                "east": { "texture": "#chair_back", "uv": [ 0, 0, 15, 1 ] },
+                "south": { "texture": "#chair_back", "uv": [ 0, 0, 14, 1 ] },
+                "west": { "texture": "#chair_back", "uv": [ 0, 0, 15, 1 ] },
+                "up": { "texture": "#chair_back", "uv": [ 0, 0, 14, 15 ] },
+                "down": { "texture": "#chair_back", "uv": [ 0, 0, 14, 15 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 1, 9, 1 ], 
+            "to": [ 15, 19, 2 ], 
+            "faces": {
+                "north": { "texture": "#chair_back", "uv": [ 0, 0, 14, 10 ] },
+                "east": { "texture": "#chair_back", "uv": [ 0, 0, 1, 10 ] },
+                "south": { "texture": "#chair_back", "uv": [ 0, 0, 14, 10 ] },
+                "west": { "texture": "#chair_back", "uv": [ 0, 0, 1, 10 ] },
+                "up": { "texture": "#chair_back", "uv": [ 0, 0, 14, 1 ] }
+            }
+        },
+        {
+            "name": "Cube",
+            "from": [ 2, 19, 1 ], 
+            "to": [ 14, 20, 2 ], 
+            "faces": {
+                "north": { "texture": "#chair_back", "uv": [ 0, 0, 12, 1 ] },
+                "east": { "texture": "#chair_back", "uv": [ 0, 0, 1, 1 ] },
+                "south": { "texture": "#chair_back", "uv": [ 0, 0, 12, 1 ] },
+                "west": { "texture": "#chair_back", "uv": [ 0, 0, 1, 1 ] },
+                "up": { "texture": "#chair_back", "uv": [ 0, 0, 12, 1 ] }
+            }
+        }
+    ]
+}

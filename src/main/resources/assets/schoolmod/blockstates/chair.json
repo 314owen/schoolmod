@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=south": { "model": "schoolmod:block/chair" },
+        "facing=north": { "model": "schoolmod:block/chair", "y": 180 },
+        "facing=east":  { "model": "schoolmod:block/chair", "y": 270 },
+        "facing=west":  { "model": "schoolmod:block/chair", "y": 90 }
+	}
+}

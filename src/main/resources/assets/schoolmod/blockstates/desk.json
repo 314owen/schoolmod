@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=west": { "model": "schoolmod:block/desk" },
+        "facing=east": { "model": "schoolmod:block/desk", "y": 180 },
+        "facing=south":  { "model": "schoolmod:block/desk", "y": 270 },
+        "facing=north":  { "model": "schoolmod:block/desk", "y": 90 }
+	}
+}
