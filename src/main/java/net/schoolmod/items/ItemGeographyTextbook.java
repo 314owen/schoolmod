@@ -17,6 +17,7 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
+import net.minecraft.world.gen.Heightmap.Type;
 
 public class ItemGeographyTextbook extends Item {
 
@@ -44,7 +45,7 @@ public class ItemGeographyTextbook extends Item {
 			int x = player.getPosition().getX() + new Random().nextInt(500);
 			int z = player.getPosition().getZ() + new Random().nextInt(500);
 			int y = 0;
-			for (int i = 255; i > 0; i++) {
+			for (int i = 255; i > 0; i--) {
 				if (world.getBlockState(new BlockPos(x, i, z)).getBlock() != Blocks.AIR) {
 					y = i;
 					break;

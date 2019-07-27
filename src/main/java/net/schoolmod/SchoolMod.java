@@ -15,10 +15,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLLoadCompleteEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import net.schoolmod.blocks.BlockChair;
@@ -72,11 +72,16 @@ import net.schoolmod.items.ItemPhilosophyTextbook;
 import net.schoolmod.items.ItemPhysicsTextbook;
 import net.schoolmod.items.ItemPsychologyTextbook;
 import net.schoolmod.items.ItemStatisticsTextbook;
+import net.schoolmod.proxy.ClientProxy;
+import net.schoolmod.proxy.CommonProxy;
+import net.schoolmod.proxy.ServerProxy;
 
 @Mod("schoolmod")
 public class SchoolMod {
 	public static final String modid = "schoolmod";
 	private static final Logger LOGGER = LogManager.getLogger();
+	
+    public static CommonProxy proxy = DistExecutor.runForDist(() -> ClientProxy::new, () -> ServerProxy::new);
 	
 	static final ItemGroup tabSchoolMod = (new ItemGroup("tabSchoolMod") {
 		@Override
@@ -87,18 +92,24 @@ public class SchoolMod {
 	
 	public SchoolMod() {
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(this::loadComplete);
+
+		//FMLJavaModLoadingContext.get().getModEventBus().addListener(this::doClientStuff);
 
 		MinecraftForge.EVENT_BUS.register(this);
 	}
 
 	private void setup(final FMLCommonSetupEvent event) {
 		LOGGER.info("Initalizing School Mod!");
+		proxy.setup();
 	}
 
-	private void doClientStuff(final FMLClientSetupEvent event) {
-		ClientRegistry.bindTileEntitySpecialRenderer(TileEntityDesk.class, new TileEntityDeskRenderer());
-	}
+	private void loadComplete(final FMLLoadCompleteEvent event) {
+        proxy.loadComplete();
+    }
+	
+	/*private void doClientStuff(final FMLClientSetupEvent event) {
+	}*/
 
 	@SubscribeEvent
 	public void onServerStarting(FMLServerStartingEvent event) {
